@@ -1,0 +1,34 @@
+<% provide(:title, "単語一覧") %>
+
+    <h1>単語メンテナンス</h1>
+    <h2>単語の登録・編集などが行えます</h2>
+    <p> <%= link_to "問題を作成する", add_path %></p>
+
+<%# 検索機能　答えの検索はかけられない・・・　%>
+    <div id="nav-search">
+
+    <%= form_tag(questions_path, :method => 'get') do %>
+    <p>
+      <%= text_field_tag :search, params[:search] %>
+      <%= submit_tag "検索", :question => nil %>
+    </p>
+    <% end %>
+    </div>
+  <!-- nav-search -->
+
+<table class="table">
+  <tr>
+    <th>No</th><th>問題</th><th>答え</th><th cospan="1"></th>
+  </tr>
+
+  <%= will_paginate @question,:previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>
+  <%  @question.each.with_index(1) do |obj,i| %>
+    <tr>
+      <td><%= i %></td>
+      <td><%= obj.question %></td>
+      <td><%= obj.description %></td>
+      <td><a href="/question/<%= obj.id %>/edit">設定</a></td>
+    </tr>
+  <% end %>
+</table>
+<%= will_paginate @question,:previous_label => ' &lt 前へ', :next_label => '次へ &gt' %>

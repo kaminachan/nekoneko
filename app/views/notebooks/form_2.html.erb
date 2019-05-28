@@ -1,0 +1,33 @@
+<% provide(:title, 'ランキング') %>
+
+<h1>ランキング</h1>
+
+<table border="1">
+    <tr>
+      <td>順位</td>
+      <td>name</td>
+      <td>最高正解率</td>
+    </tr>
+
+    <% user_no = 1 %>
+  <div class="user"></div>
+      <% @ranking.each.with_index(1) do |rank, i| %>
+        <% if rank.highest_rate == @ranking[i-2].highest_rate %>
+          <% i = user_no %>
+        <% else %>
+          <% i = i %>
+          <% user_no = i %>
+        <% end %>
+      <% @class = "user" if session[:user_id] == rank.id %>
+    <tr class=<%=@class.to_s %>>
+        <td><%= "第#{i}位" %></td>
+        <td><%= rank.name %></td>
+        <td><%= "#{rank.highest_rate}%"  %></td>
+    </tr>
+    <% @class = "" %>
+        <% end %>
+</table>
+
+<P><%= link_to "単語の編集をしてみる", index_path %></P>
+<p><%= link_to "Homeへ戻る", user_path(session[:user_id]) %></p>
+

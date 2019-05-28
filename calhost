@@ -1,0 +1,15 @@
+                                 List of databases
+     Name      | Owner  | Encoding |   Collate   |    Ctype    | Access privileges 
+---------------+--------+----------+-------------+-------------+-------------------
+ neko          | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ nekoneko      | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ nekoneko_test | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ notebook      | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ postgres      | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+ template0     | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/asnica        +
+               |        |          |             |             | asnica=CTc/asnica
+ template1     | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | =c/asnica        +
+               |        |          |             |             | asnica=CTc/asnica
+ test_db       | asnica | UTF8     | en_US.UTF-8 | en_US.UTF-8 | 
+(8 rows)
+

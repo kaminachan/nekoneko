@@ -1,0 +1,20 @@
+<% provide(:title, 'メインメニュー') %>
+
+<h1><%= "Welcome" %></h1>
+
+<div>現在時刻：<%= Time.now %></div>
+
+<div id="result">現在時刻：<%= Time.now %></div>
+<%= link_to '更新', update_path, :remote => true %>
+
+<h2><%="#{@set_user.name} さん"  %></h2>
+
+<p>
+<ul>
+  <ol><%= link_to "新規アカウント作成", sign_path %></ol>
+  <ol><%= link_to "単語勉強", form_path %></ol>
+  <ol><%= link_to "ランキング", form_2_path %></ol>
+  <ol><%= link_to "単語の編集", index_path %></ol>
+</ul>
+</p>
+

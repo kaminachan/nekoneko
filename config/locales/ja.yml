@@ -1,0 +1,13 @@
+ja:
+  activerecord:
+    models:
+      users:
+      questions:
+    attributes:
+      user:
+        name: 名前
+        password: パスワード
+        password_confirmation: パスワード
+      question:
+        question: 問題
+        description: 答え

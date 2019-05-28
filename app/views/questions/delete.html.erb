@@ -1,0 +1,11 @@
+<% provide(:title, "単語削除") %>
+<% provide(:url, question_path ) %>
+<% provide(:button_text, "削除する") %>
+
+
+<h1>単語の修正ページ</h1>
+<p><%= "問題　#{@question.question}の削除を行いますか？" %></p>
+
+<%= render 'nested' %>
+
+<%= link_to "一覧に戻る", index_path %>

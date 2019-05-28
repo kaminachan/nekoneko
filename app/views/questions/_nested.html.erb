@@ -1,0 +1,28 @@
+
+<%= nested_form_for(@question, url: yield(:url)) do |form| %>
+  <%=render'shared/error_messages', model: form.object %>
+  <table>
+
+    <%=form.label :問題 %>
+    <%=form.text_field :question %>
+
+    <%=form.label :答え %>
+    <%=form.text_field :description %>
+
+  </table>
+
+
+  <table id='posts'>
+    <%= form.fields_for :question_similar_words do |words| %>
+      <%= words.label :類義語 %>
+      <%= words.text_field :similar_word %>
+      <%= words.link_to_remove '削除'  %>
+
+    <% end %>
+  </table>
+
+  <%= form.link_to_add '追加', :question_similar_words, data: { target: '#posts'} %>
+
+  <%=form.submit yield(:button_text) %>
+
+<% end %>

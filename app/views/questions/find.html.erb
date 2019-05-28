@@ -1,0 +1,28 @@
+<h1>検索フォーム</h1>
+
+<table>
+  <%=form_tag question_path, :method =>'get' do %>
+
+<tr><th>問題</th>
+  <td><%= text_field_tag :find, params[:find] %></td></tr>
+<tr><th></th>
+  <td><%= submit_tag "検索",:question => nil %></td></tr>
+<% end %>
+
+  <%= yield %>
+
+</table>
+
+<hr>
+<table>
+  <tr>
+    <th>ID</th><th>問題</th><th>答え</th>
+  </tr>
+  <% @question.each do |obj| %>
+    <tr>
+      <td><%= obj.id %></td>
+      <td><%= obj.question %></td>
+      <td><%= obj.description %></td>
+    </tr>
+    <% end %>
+</table>

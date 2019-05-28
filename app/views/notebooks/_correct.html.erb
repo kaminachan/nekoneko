@@ -1,0 +1,18 @@
+<%= "第 #{ session[:no_id]  }  門" %>
+<%= @correct.question %>
+<%= "【類義語】" %>
+<% @correct.question_similar_words.each do |similar| %>
+  <%=  similar.similar_word    %>
+<% end %>
+
+<%= form_tag form_path, :method => 'post', remote: true do %>
+  <h4>解答</h4>
+  <%# どの問題が正解であるかをidで表示　%>
+  <%= hidden_field_tag "correct", @correct.id %>
+
+  <% @arr.shuffle.each do |object| %>
+    <%= radio_button_tag("answer", object.id) %>
+    <%= label_tag object.description %>
+  <% end %>
+  <%= submit_tag "OK" %>
+<% end %>

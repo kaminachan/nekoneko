@@ -1,0 +1,14 @@
+// Place all the styles related to the Sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.centering_parent {
+  padding: 20px;              /* 余白指定 */
+  height: 150px;              /* 高さ指定 */
+}
+
+.centering_item {
+  width: 200px;               /* 幅指定 */
+  height: 90px;               /* 高さ指定 */
+  margin:  0 auto;            /* 中央寄せ */
+}

@@ -18,3 +18,5 @@ file/*
 dump.rdb
 public/uploads/tmp/
 test/*
+
+test_ver2

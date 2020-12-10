@@ -19,7 +19,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    #log_in @user
     unless session[:user_id] == @user.id
       redirect_to user_path(session[:user_id])
     end
@@ -28,6 +27,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
+      session[:user_id] = @user.id
       flash[:success] = "さあ、単語帳を始めましょう！"
       redirect_to user_path(id: @user.id)
     else

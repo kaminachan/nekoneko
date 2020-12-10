@@ -2,6 +2,7 @@ class NotebooksController < ApplicationController
   before_action :authenticate_user, only: [:form, :form_2]
 
   def form
+    p "テストです。20201210"
     if Question.all.count >= 50
       request.fullpath
     else

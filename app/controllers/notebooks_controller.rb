@@ -1,5 +1,6 @@
 class NotebooksController < ApplicationController
   before_action :authenticate_user, only: [:form, :form_2]
+  
 
   def form
     if Question.all.count >= 50
